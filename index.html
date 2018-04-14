@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/niceScroll.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+</head>
+
+<body>
+    <div class="main">
+        <!-- 头部 -->
+        <div class="topContainer"></div>
+        <!-- 务工人员统计表 -->
+        <div class="ltContainer container">
+            <div class="workerPanel">
+                <h3 class="containerName">务工人员统计表</h3>
+                <div id="workerEchart" class="chartContainer"></div>
+            </div>
+        </div>
+        <!-- 专户交易数据 -->
+        <div class="lbContainer container">
+            <!-- 头部 -->
+            <div class="accInfoTopPanel">
+                <h3 class="containerName">专户交易数据</h3>
+                <div id="accInfoEchart" class="chartContainer"></div>
+            </div>
+            <!-- 底部 -->
+            <div class="accInfoBottomPanel">
+                <h3 class="detailName">专户详情
+                    <span class="dtIcon dtIcon-lt"></span>
+                    <span class="dtIcon dtIcon-lb"></span>
+                    <span class="dtIcon dtIcon-rt"></span>
+                    <span class="dtIcon dtIcon-rb"></span>
+                </h3>
+                <div class="detailWrap">
+                    <div id="accDetailEchart" class="chartContainer"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 中间项目信息 -->
+        <div class="centerContainer container">
+            <div class="projectDataPanel">
+                <ul class="data-list">
+                    <li class="data-item">
+                        <b id="projectCount" class="data-item-num"></b>
+                        <span>个</span>
+                        <br>
+                        <span class="data-item-name">项目总数</span>
+                    </li>
+                    <li class="data-item">
+                        <b id="workerCount" class="data-item-num"></b>
+                        <span>人</span>
+                        <br>
+                        <span class="data-item-name">务工人员</span>
+                    </li>
+                    <li class="data-item">
+                        <b id="totalPayMoney" class="data-item-num"></b>
+                        <span>万</span>
+                        <br>
+                        <span class="data-item-name">代发工资</span>
+                    </li>
+                    <li class="data-item">
+                        <b id="accInAmount" class="data-item-num"></b>
+                        <span>万</span>
+                        <br>
+                        <span class="data-item-name">账户缴存</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="echarts" class="echarts"></div>
+        </div>
+        <!-- 视频监控 -->
+        <div class="rtContainer container">
+            <div class="warningImgPanel">
+                <h3 class="containerName">视频监控</h3>
+                <div class="img-gallary">
+                    <div class="img-bg img-big">
+                        <img src="images/warning-img-1.png" alt="">
+                    </div>
+                    <div class="img-bg img-sm-t">
+                        <img src="images/warning-img-1.png" alt="">
+                    </div>
+                    <div class="img-bg img-sm-b">
+                        <img src="images/warning-img-1.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 考勤统计表 -->
+        <div class="rcContainer container">
+            <span>考勤统计表</span>
+        </div>
+        <!-- 工资发放数据 -->
+        <div class="rbContainer container">
+            <span>工资发放数据</span>
+        </div>
+    </div>
+
+    <script src="javascript/jquery-3.3.1.min.js"></script>
+    <script src="http://rapapi.org/rap.plugin.js?projectId=32944"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=53oVIOgmSIejwV7EfphPgTynOZbIiVYu"></script>
+    <script src="javascript/echarts.min.js"></script>
+    <script src="javascript/bmap.min.js"></script>
+    <!-- <script src="http://rap2api.taobao.org/app/plugin/:projectId"></script>
+    <script src="http://rap2api.taobao.org/libs/jquery.rap.js"></script> -->
+    <script src="javascript/main.js"></script>
+</body>
+
+</html>
