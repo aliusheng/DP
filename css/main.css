@@ -4,10 +4,33 @@
  * Created by shengliu on 2018-04-10.
  */
 
+ /* common */
 *,
  :after,
  :before {
     box-sizing: border-box;
+}
+
+hr {
+    margin: 0;
+}
+
+/* 列表去除默认样式 */
+
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
 }
 
 html,
@@ -27,17 +50,6 @@ body {
     height: 100%;
     min-width: 980px;
     overflow-x: auto;
-}
-
-
-/* 列表去除默认样式 */
-
-ul,
-ol,
-li {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
 }
 
 .main {
@@ -66,6 +78,12 @@ li {
     overflow: hidden;
 }
 
+.top-time {
+    position: absolute;
+    right: 30px;
+    bottom: 0;
+    color: #fff;
+}
 
 /* 外围框架 */
 
@@ -91,6 +109,7 @@ li {
     top: 10%;
     width: 38%;
     height: 89%;
+    overflow: auto;
 }
 
 .rtContainer {
@@ -106,15 +125,15 @@ li {
     left: 70%;
     top: 45%;
     width: 29%;
-    height: 34%;
+    height: 24%;
 }
 
 .rbContainer {
     position: absolute;
     left: 70%;
-    top: 80%;
+    top: 70%;
     width: 29%;
-    height: 19%;
+    height: 29%;
 }
 
 .container {
@@ -160,10 +179,32 @@ li {
 /* 专户交易数据 */
 
 .accInfoTopPanel {
+    position: relative;
     display: inline-block;
     width: 100%;
     height: 50%;
     margin-top: 2%;
+    text-align: center;
+}
+
+.accInfoMsgs {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    border-top: 1px solid #1f4084;
+}
+
+.accInfoMsg-item {
+    float: left;
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    border-right: 1px solid #1f4084;
+    font-size: 0.75rem;
+    text-align: center;
 }
 
 .accInfoBottomPanel {
@@ -242,7 +283,7 @@ li {
 
 .data-item {
     display: inline-block;
-    margin: 20px 10px;
+    margin: 20px 15px;
     font-size: 1rem;
     text-align: right;
     line-height: 120%;
@@ -257,6 +298,11 @@ li {
     color: #70bcf1;
 }
 
+.projectMapPanel {
+    width: 100%;
+    height: 400px;
+}
+
 /* 视频监控 */
 
 .warningImgPanel {
@@ -268,14 +314,23 @@ li {
 
 .img-gallary {
     position: absolute;
-    top: 40px;
+    top: 36px;
     bottom: 0;
     left: 0;
     width: 100%;
 }
 
-.img-bg {
+.img-gallary-item {
     overflow: hidden;
+}
+
+.img-bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('../images/img-box.png') no-repeat;
+    background-size: 100%;
+    padding: 12% 2% 2%;
 }
 
 .img-bg img {
@@ -288,7 +343,7 @@ li {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 60%;
+    width: 64%;
     padding: 1%;
 }
 
@@ -297,7 +352,7 @@ li {
     right: 0;
     top: 0;
     bottom: 50%;
-    width: 40%;
+    width: 36%;
     padding: 1%;
 }
 
@@ -306,6 +361,123 @@ li {
     right: 0;
     top: 50%;
     bottom: 0;
-    width: 40%;
+    width: 36%;
     padding: 1%;
+}
+
+/* 实时考勤统计 */
+
+.warningImgPanel {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.kqRecord-list {
+    position: absolute;
+    top: 36px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 15px 0;
+    overflow-y: auto;
+}
+
+.kqRecord-item {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    line-height: 40px; 
+}
+
+.item-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url('../images/kqrecord-icons.png') no-repeat;
+    background-size: 40px auto;
+}
+
+.project-icon {
+    background-position: 0 0;
+}
+
+.group-icon {
+    background-position: 0 -43px;
+}
+
+.worker-icon {
+    background-position: 0 -89px;
+}
+
+.record-count {
+    font-size: 1.5rem;
+}
+
+/* 实时项目考勤 */
+.presentRecordPanel {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.wages {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    overflow: auto;
+}
+
+.wages-title {
+    width: 100%;
+    font-size: 0.9rem;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.wages-list {
+    width: 100%;
+    font-size: 0.75rem;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.fc-g {
+    color: #559068;
+}
+
+.wages-item {
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wages-name {
+    width: 40%;
+}
+
+.wages-worker {
+    width: 20%;
+}
+
+.wages-group {
+    width: 20%;
+}
+
+.wages-count {
+    width: 20%;
+}
+
+.wages-count span {
+    display: inline-block;
+    padding: 0 20px;
+    border-radius: 50px;
+    background: #40a260;
+    color: #fff;
 }

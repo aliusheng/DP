@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/niceScroll.css" />
@@ -14,7 +15,9 @@
 <body>
     <div class="main">
         <!-- 头部 -->
-        <div class="topContainer"></div>
+        <div class="topContainer">
+            <div id="topTime" class="top-time">00:00:00</div>
+        </div>
         <!-- 务工人员统计表 -->
         <div class="ltContainer container">
             <div class="workerPanel">
@@ -27,7 +30,17 @@
             <!-- 头部 -->
             <div class="accInfoTopPanel">
                 <h3 class="containerName">专户交易数据</h3>
-                <div id="accInfoEchart" class="chartContainer"></div>
+                <div class="accInfoMsgs">
+                    <div class="accInfoMsg-item">
+                         专户个数
+                         <span id="accCount"></span>个
+                    </div>
+                    <div class="accInfoMsg-item">
+                         工资笔数
+                        <span id="wagesCount"></span>笔
+                    </div>
+                </div>
+                <div id="accInfoEchart" class="chartContainer"></div>                
             </div>
             <!-- 底部 -->
             <div class="accInfoBottomPanel">
@@ -47,19 +60,19 @@
             <div class="projectDataPanel">
                 <ul class="data-list">
                     <li class="data-item">
-                        <b id="projectCount" class="data-item-num"></b>
+                        <b id="projectCount" class="data-item-num">0</b>
                         <span>个</span>
                         <br>
                         <span class="data-item-name">项目总数</span>
                     </li>
                     <li class="data-item">
-                        <b id="workerCount" class="data-item-num"></b>
+                        <b id="workerCount" class="data-item-num">0</b>
                         <span>人</span>
                         <br>
                         <span class="data-item-name">务工人员</span>
                     </li>
                     <li class="data-item">
-                        <b id="totalPayMoney" class="data-item-num"></b>
+                        <b id="totalPayMoney" class="data-item-num">0</b>
                         <span>万</span>
                         <br>
                         <span class="data-item-name">代发工资</span>
@@ -72,32 +85,70 @@
                     </li>
                 </ul>
             </div>
-            <div id="echarts" class="echarts"></div>
+            <div class="projectMapPanel">
+            <div id="bmapCharts" class="chartContainer"></div>
+            </div>
         </div>
         <!-- 视频监控 -->
         <div class="rtContainer container">
             <div class="warningImgPanel">
                 <h3 class="containerName">视频监控</h3>
                 <div class="img-gallary">
-                    <div class="img-bg img-big">
-                        <img src="images/warning-img-1.png" alt="">
+                    <div class="img-gallary-item img-big">
+                        <div class="img-bg">
+                            <img id="img-big"  alt="">
+                        </div>
                     </div>
-                    <div class="img-bg img-sm-t">
-                        <img src="images/warning-img-1.png" alt="">
+                    <div class="img-gallary-item img-sm-t">
+                        <div class="img-bg">
+                            <img id="img-sm-t"  alt="">
+                        </div>
                     </div>
-                    <div class="img-bg img-sm-b">
-                        <img src="images/warning-img-1.png" alt="">
+                    <div class="img-gallary-item img-sm-b">
+                        <div class="img-bg">
+                            <img id="img-sm-b"  alt="">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- 考勤统计表 -->
+        <!-- 实时考勤统计 -->
         <div class="rcContainer container">
-            <span>考勤统计表</span>
+            <div class="kqRecordPanel">
+                <h3 class="containerName">实时考勤统计</h3>
+                <ul class="kqRecord-list">
+                    <li class="kqRecord-item">
+                        <div class="fl"><i class="item-icon project-icon fl"></i> 在建项目</div>
+                        <div class="fr"><span id="projectPresentCount" class="record-count">0</span>人</div>
+                    </li>
+                    <li class="kqRecord-item">
+                        <div class="fl">
+                            <i class="item-icon group-icon fl"></i> 在场班组</div>
+                        <div class="fr">
+                            <span id="workerGroupPresentCount" class="record-count">0</span>人</div>
+                    </li>
+                    <li class="kqRecord-item">
+                        <div class="fl">
+                            <i class="item-icon worker-icon fl"></i> 在场工人</div>
+                        <div class="fr">
+                            <span id="workerPresentCount" class="record-count">0</span>人</div>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <!-- 工资发放数据 -->
+        <!-- 实时项目考勤 -->
         <div class="rbContainer container">
-            <span>工资发放数据</span>
+            <div class="presentRecordPanel">
+                <h3 class="containerName">实时项目考勤</h3>
+                <div class="wages">
+                    <div id="wagesTitle" class="wages-title">
+                        <div class="wages-item wages-name">项目名称</div>
+                        <div class="wages-item wages-worker fc-g">在场人员</div>
+                        <div class="wages-item wages-group fc-g">在场班组</div>
+                        <div class="wages-item wages-count fc-g">违规出入</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
