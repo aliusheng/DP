@@ -48,8 +48,9 @@ html,
 body {
     width: 100%;
     height: 100%;
-    min-width: 980px;
-    overflow-x: auto;
+    min-width: 1300px;
+    min-height: 600px;
+    overflow: auto;
 }
 
 .main {
@@ -80,9 +81,10 @@ body {
 
 .top-time {
     position: absolute;
-    right: 30px;
-    bottom: 0;
+    right: 14px;
+    bottom: -5px;
     color: #fff;
+    font-size: 0.9rem;
 }
 
 /* 外围框架 */
@@ -195,6 +197,7 @@ body {
     height: 40px;
     overflow: hidden;
     border-top: 1px solid #1f4084;
+    border-bottom: 1px solid #1f4084;
 }
 
 .accInfoMsg-item {
@@ -265,6 +268,20 @@ body {
     padding: 0 10px;
 }
 
+.accDetail-showL {
+    position: absolute;
+    left: 25%;
+    font-size: 0.75rem;
+    color: #fff;
+}
+
+.accDetail-showR {
+    position: absolute;
+    right: 25%;
+    font-size: 0.75rem;
+    color: #fff;
+}
+
 /* 中间地图 */
 
 .projectDataPanel {
@@ -278,12 +295,13 @@ body {
 
 .data-list {
     margin: 20px 10px;
+    padding: 15px 0;
     overflow: hidden;
 }
 
 .data-item {
     display: inline-block;
-    margin: 20px 15px;
+    padding: 10px 15px;
     font-size: 1rem;
     text-align: right;
     line-height: 120%;
@@ -380,23 +398,22 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 15px 15px 0;
-    overflow-y: auto;
+    padding: 10px 10px 0;
 }
 
 .kqRecord-item {
     width: 100%;
+    height: 33%;
     overflow: hidden;
-    margin-bottom: 10px;
-    line-height: 40px; 
+    font-size: 0.9rem;
 }
 
 .item-icon {
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
     background: url('../images/kqrecord-icons.png') no-repeat;
-    background-size: 40px auto;
+    background-size: 24px auto;
 }
 
 .project-icon {
@@ -404,15 +421,15 @@ body {
 }
 
 .group-icon {
-    background-position: 0 -43px;
+    background-position: 0 -26px;
 }
 
 .worker-icon {
-    background-position: 0 -89px;
+    background-position: 0 -53px;
 }
 
 .record-count {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 /* 实时项目考勤 */
@@ -429,7 +446,6 @@ body {
     bottom: 0;
     width: 100%;
     padding: 10px;
-    overflow: auto;
 }
 
 .wages-title {
@@ -437,6 +453,16 @@ body {
     font-size: 0.9rem;
     overflow: hidden;
     margin-bottom: 5px;
+}
+
+.wages-wrap {
+    position: absolute;
+    left: 0;
+    top: 32px;
+    bottom: 0;
+    width: 100%;
+    padding: 0 10px;
+    overflow: auto;    
 }
 
 .wages-list {
@@ -476,8 +502,22 @@ body {
 
 .wages-count span {
     display: inline-block;
-    padding: 0 20px;
+    max-width: 100%;
+    padding: 0 15px;
     border-radius: 50px;
     background: #40a260;
     color: #fff;
+    text-align: center;
+}
+
+.wages-count span.levelA {
+    background: #40a260;
+}
+
+.wages-count span.levelB {
+    background: #df9630;
+}
+
+.wages-count span.levelC {
+    background: #d22b1d;
 }

@@ -32,11 +32,11 @@
                 <h3 class="containerName">专户交易数据</h3>
                 <div class="accInfoMsgs">
                     <div class="accInfoMsg-item">
-                         专户个数
+                         监管专户数量
                          <span id="accCount"></span>个
                     </div>
                     <div class="accInfoMsg-item">
-                         工资笔数
+                         工资发放笔数
                         <span id="wagesCount"></span>笔
                     </div>
                 </div>
@@ -51,6 +51,8 @@
                     <span class="dtIcon dtIcon-rb"></span>
                 </h3>
                 <div class="detailWrap">
+                    <span class="accDetail-showL">当月</span>
+                    <span class="accDetail-showR">当日</span>
                     <div id="accDetailEchart" class="chartContainer"></div>
                 </div>
             </div>
@@ -147,19 +149,21 @@
                         <div class="wages-item wages-group fc-g">在场班组</div>
                         <div class="wages-item wages-count fc-g">违规出入</div>
                     </div>
+                    <div class="wages-wrap">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="javascript/jquery-3.3.1.min.js"></script>
-    <script src="http://rapapi.org/rap.plugin.js?projectId=32944"></script>
-    <script src="http://api.map.baidu.com/api?v=2.0&ak=53oVIOgmSIejwV7EfphPgTynOZbIiVYu"></script>
-    <script src="javascript/echarts.min.js"></script>
-    <script src="javascript/bmap.min.js"></script>
+    <script charset="utf-8" src="javascript/jquery-3.3.1.min.js"></script>
+    <script charset="utf-8" src="http://rapapi.org/rap.plugin.js?projectId=32944"></script>
+    <script charset="utf-8" src="http://api.map.baidu.com/api?v=2.0&ak=53oVIOgmSIejwV7EfphPgTynOZbIiVYu"></script>
+    <script charset="utf-8" src="javascript/echarts.min.js"></script>
+    <script charset="utf-8" src="javascript/bmap.min.js"></script>
     <!-- <script src="http://rap2api.taobao.org/app/plugin/:projectId"></script>
     <script src="http://rap2api.taobao.org/libs/jquery.rap.js"></script> -->
-    <script src="javascript/main.js"></script>
+    <script charset="utf-8" src="javascript/main.js"></script>
 </body>
 
 </html>
