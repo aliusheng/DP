@@ -176,31 +176,31 @@
                         workerGroupPresentCount: "3",
                         workerPresentCount: "8"
                     }, {
-                            proName: "测试项目2",
-                            warningCount: "13",
-                            workerGroupPresentCount: "1",
-                            workerPresentCount: "8"
-                        }, {
-                            proName: "测试项目3",
-                            warningCount: "14",
-                            workerGroupPresentCount: "5",
-                            workerPresentCount: "8"
-                        }, {
-                            proName: "测试项目4",
-                            warningCount: "0",
-                            workerGroupPresentCount: "1",
-                            workerPresentCount: "8"
-                        }, {
-                            proName: "测试项目5",
-                            warningCount: "24",
-                            workerGroupPresentCount: "2",
-                            workerPresentCount: "8"
-                        }, {
-                            proName: "测试项目6",
-                            warningCount: "0",
-                            workerGroupPresentCount: "1",
-                            workerPresentCount: "8"
-                        })
+                        proName: "测试项目2",
+                        warningCount: "13",
+                        workerGroupPresentCount: "1",
+                        workerPresentCount: "8"
+                    }, {
+                        proName: "测试项目3",
+                        warningCount: "14",
+                        workerGroupPresentCount: "5",
+                        workerPresentCount: "8"
+                    }, {
+                        proName: "测试项目4",
+                        warningCount: "0",
+                        workerGroupPresentCount: "1",
+                        workerPresentCount: "8"
+                    }, {
+                        proName: "测试项目5",
+                        warningCount: "24",
+                        workerGroupPresentCount: "2",
+                        workerPresentCount: "8"
+                    }, {
+                        proName: "测试项目6",
+                        warningCount: "0",
+                        workerGroupPresentCount: "1",
+                        workerPresentCount: "8"
+                    });
                     $wagesWrap.empty();
                     for (var index = 0; index < presentRecordData.length; index++) {
                         var badgeClassName = '';
@@ -225,57 +225,10 @@
                         $wagesWrap.append(listHtml);
                     };
                     // 文字翻滚效果
-                    if (presentRecordData.length > recordListLength) {
-                        dataInter = setInterval(function () {
-                            // var first = $(".wages-list")[0];
-                            // $(".wages-list")[0].remove();
-                            // $wagesWrap.append(first);
-                            // $wagesWrap.scrollTop("25");
-                            $(".wages-list:first").animate({ "margin-top": -23 }, 1000, function () {
-                                $(this).css("margin-top", 0).appendTo(".wages-wrap");
-                            })
-                        }, 2000);
-                    }
-                    // var carousel = 0,
-                    //     dataLength = presentRecordData.length, // 数据总个数
-                    //     slideNum; // 播放几帧
-                    // slideNum = Math.ceil(dataLength / recordListLength);
-                    // if (slideNum > 1) {
-                    //     for (var cur = 0; cur < recordListLength; cur++) {
-                    //         var listHtml = '<div class="wages-list"><div class="wages-item wages-name">'
-                    //             + presentRecordData[cur].proName + '</div ><div class="wages-item wages-worker fc-g">'
-                    //             + presentRecordData[cur].workerPresentCount + '</div><div class="wages-item wages-group fc-g">'
-                    //             + presentRecordData[cur].workerGroupPresentCount + '</div><div class="wages-item wages-count fc-g"><span>'
-                    //             + presentRecordData[cur].warningCount + '</span></div></div >';
-                    //         $wagesTitle.after(listHtml);
-                    //     };
-                    //     var dataInter = setInterval(function () {
-                    //         carousel ++;
-                    //         if (carousel < slideNum) {
-                    //             $(".wages-list").remove();
-                    //             for (var carouselCur = carousel * recordListLength; carouselCur < presentRecordData.length && carouselCur < (carousel + 1) * recordListLength; carouselCur++) {
-                    //                 var listHtml = '<div class="wages-list"><div class="wages-item wages-name">'
-                    //                     + presentRecordData[carouselCur].proName + '</div ><div class="wages-item wages-worker fc-g">'
-                    //                     + presentRecordData[carouselCur].workerPresentCount + '</div><div class="wages-item wages-group fc-g">'
-                    //                     + presentRecordData[carouselCur].workerGroupPresentCount + '</div><div class="wages-item wages-count fc-g"><span>'
-                    //                     + presentRecordData[carouselCur].warningCount + '</span></div></div >';
-                    //                 $wagesTitle.after(listHtml);
-                    //             }
-                    //         } else {
-                    //             clearInterval(dataInter);
-                    //             carousel = 0;
-                    //         }
-                    //     }, 3000);
-                    // } else {
-                    //     for (var index = 0; index < presentRecordData.length; index++) {
-                    //         var listHtml = '<div class="wages-list"><div class="wages-item wages-name">'
-                    //             + presentRecordData[index].proName + '</div ><div class="wages-item wages-worker fc-g">'
-                    //             + presentRecordData[index].workerPresentCount + '</div><div class="wages-item wages-group fc-g">'
-                    //             + presentRecordData[index].workerGroupPresentCount + '</div><div class="wages-item wages-count fc-g"><span>'
-                    //             + presentRecordData[index].warningCount + '</span></div></div >';
-                    //         $wagesTitle.after(listHtml);
-                    //     }
-                    // };
+                    clearInterval(dataInterval);
+                    dataInterval = {};
+                    listAnimate();
+                    
                 } else {
                     alert(result[0].errMsg);
                 }
@@ -300,10 +253,13 @@
                         },
                         legend: {
                             orient: 'vertical',
-                            left: '50%',
+                            left: '45%',
                             top: '20%',
+                            itemWidth: 15,
+                            itemHeight: 7,
                             textStyle: {
-                                color: '#1694f4'
+                                color: '#1694f4',
+                                fontSize: 12
                             },
                             data: accInfoData.name,
                             formatter: function (name) {
@@ -583,7 +539,7 @@
                             },
                             itemStyle: {
                                 normal: {
-                                    color: '#00e8f5'
+                                    color: '#059da6'
                                 }
                             },
                             data: accDetailData.monthData,
@@ -984,6 +940,29 @@
         }
     };
 
+    // 事件绑定
+    var events = function () {
+        $(document)
+            .on("mouseover mouseout", ".wages-wrap", function (event) {
+                if (event.type == "mouseover") {
+                    //鼠标悬浮
+                    if (presentRecordData.length > recordListLength) {
+                        clearInterval(dataInterval);
+                    }
+                } else if (event.type == "mouseout") {
+                    //鼠标离开
+                    function anim() {
+                        $(".wages-list:first").animate({ "margin-top": -23 }, 1000, function () {
+                            $(this).css("margin-top", 0).appendTo(".wages-wrap");
+                        })
+                    }
+                    if (presentRecordData.length > recordListLength) {
+                        dataInterval = setInterval(anim, 2000);
+                    }
+                }
+            })
+    };
+
     // 实时项目考勤的列表可展示几条
     function getPresentRecordListLength() {
         var wagesHeight = $(".wages").height(),
@@ -994,6 +973,20 @@
         return itemNum = parseInt(listHeight / titleHeight);
     }
 
+    // 实时项目考勤文字翻滚
+    function listAnimate() {
+        if (presentRecordData.length > recordListLength) {
+            dataInterval = {};
+            function anim() {
+                $(".wages-list:first").animate({ "margin-top": -23 }, 500, function () {
+                    $(this).css("margin-top", 0).appendTo(".wages-wrap");
+                })
+            }
+            dataInterval = setInterval(anim, 2000);
+        }
+    }
+
+    // 格式化
     var format = {
         numFormat: function (value) { //Y轴大于1W的格式化
             var val;
@@ -1025,8 +1018,6 @@
     function init() {
         // 时间
         chartsController.getTime();
-        // 项目考勤列表获取可容纳条目数
-        recordListLength = getPresentRecordListLength();
         // 务工人员柱状图
         chartsController.workerOptions();
         chartsController.getWorkerSeries();
@@ -1071,14 +1062,18 @@
     $(function () {
         // 初始化
         init();
+        // 项目考勤列表获取可容纳条目数
+        recordListLength = getPresentRecordListLength();
+        events();
         // 定时数据获取
-        // setInterval(timer, 10000);
+        setInterval(timer, 10000);
         // 窗口变化图表自适应
         $(window).resize(function () {
+            // 项目考勤列表获取可容纳条目数
+            recordListLength = getPresentRecordListLength();
             $workerChart.resize();
             $accInfoChart.resize();
             $accDetailchart.resize();
-
         });
 
 

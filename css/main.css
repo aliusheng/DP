@@ -70,21 +70,24 @@ body {
     left: 0;
     top: 0;
     width: 100%;
-    height: 9%;
-    margin-bottom: 1%;
+    height: 8%;
     background-image: url('../images/top-name.png');
     background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% auto;
+    background-position: 50% bottom;
+    background-size: 85% auto;
     overflow: hidden;
 }
 
-.top-time {
+.topTimeContainer {
     position: absolute;
-    right: 14px;
-    bottom: -5px;
+    left: 0;
+    top: 7%;
+    width: 100%;
+    height: 2%;
+    padding: 0 1%;
+    text-align: right;
     color: #fff;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 /* 外围框架 */
@@ -313,6 +316,8 @@ body {
 }
 
 .data-item .data-item-name {
+    position: relative;
+    left: -4px;
     color: #70bcf1;
 }
 
@@ -462,7 +467,7 @@ body {
     bottom: 0;
     width: 100%;
     padding: 0 10px;
-    overflow: auto;    
+    overflow: hidden    
 }
 
 .wages-list {
